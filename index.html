@@ -440,7 +440,7 @@ body {
     transform: translateX(20px);
 }
 
-/* Notifications */
+/* --- UPDATED Notifications (Dynamic Island Style) --- */
 .notifications-container {
     max-width: 700px;
     margin: 0 auto;
@@ -449,56 +449,72 @@ body {
     gap: 16px;
 }
 
-.notification {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    border-radius: 14px;
-    padding: 20px 22px;
-    color: white;
+.notification-card {
+    background-color: #000; /* Dynamic Island Black */
+    border-radius: 50px;
+    padding: 12px 25px;
     display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+    align-items: center;
+    width: 100%;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    color: white;
+    box-sizing: border-box;
+    transition: transform 0.3s ease; /* Keep your hover animation */
 }
 
-.notification:hover {
-    transform: translateX(5px);
+.notification-card:hover {
+    transform: translateY(-5px);
 }
 
-.notification-icon {
-    width: 28px;
-    height: 28px;
-    background: var(--warning);
+.icon-container {
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    box-shadow: 0 0 12px rgba(255, 149, 0, 0.5);
+    margin-right: 16px;
 }
 
-.notification.success .notification-icon {
-    background: var(--success);
-    box-shadow: 0 0 12px rgba(52, 199, 89, 0.5);
+.icon-container svg {
+    width: 24px; /* Adjusted to fit layout */
+    height: 24px;
+    display: block;
 }
 
-.notification-text {
-    font-size: 15px;
-    line-height: 1.5;
+.text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
 }
 
-.notification-text strong {
-    color: var(--warning);
-}
-
-.notification.success .notification-text strong {
-    color: var(--success);
-}
-
-.highlight {
-    color: var(--primary-light);
+.di-title {
+    font-size: 16px;
     font-weight: 600;
+    color: white;
+    margin-bottom: 2px;
 }
+
+.di-message {
+    font-size: 14px;
+    color: #8A8A8E;
+    line-height: 1.4;
+}
+
+.di-message span {
+    color: #007AFF; /* KonsciousTrading Blue */
+}
+
+/* Icon Background Colors */
+.bg-warning { background-color: #FF9500; }
+.bg-block { background-color: #FF3B30; }
+.bg-success { background-color: #34C759; }
+
+/* SVG Styles for the specific icons provided */
+
 
 /* Accidental Protection */
 .accidental-protection {
@@ -1043,55 +1059,51 @@ body {
         <div class="section-title-underline"></div>
         
         <div class="notifications-container">
-            <div class="notification animate-slide-in">
-                <div class="notification-icon">
-                    <svg class="icon" viewBox="0 0 24 24" style="width: 16px; height: 16px">
-                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-                        <line x1="12" y1="9" x2="12" y2="13"/>
-                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+    
+            <div class="notification-card animate-slide-in">
+                <div class="icon-container bg-block">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" style="color: white">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636a9 9 0 11-12.728 12.728 9 9 0 0112.728-12.728zM5.636 18.364l12.728-12.728" />
                     </svg>
                 </div>
-                <div class="notification-text">
-                    <strong>Warning:</strong> Trading restricted due to Max trades (4). <span class="highlight">KonsciousTrading will reset on October 22, 2025 at 12:00 AM.</span>
+                <div class="text-container">
+                    <div class="di-title">Restricted</div>
+                    <div class="di-message">Trading restricted due to Max trades (4). <span>KonsciousTrading</span> will reset on October 22, 2025 at 12:00 AM.</div>
                 </div>
             </div>
-
-            <div class="notification animate-slide-in" style="animation-delay: 0.1s">
-                <div class="notification-icon">
-                    <svg class="icon" viewBox="0 0 24 24" style="width: 16px; height: 16px">
-                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-                        <line x1="12" y1="9" x2="12" y2="13"/>
-                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+        
+            <div class="notification-card animate-slide-in" style="animation-delay: 0.1s">
+                <div class="icon-container bg-block">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" style="color: white">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636a9 9 0 11-12.728 12.728 9 9 0 0112.728-12.728zM5.636 18.364l12.728-12.728" />
                     </svg>
                 </div>
-                <div class="notification-text">
-                    <strong>Warning:</strong> Trading restricted due to losses (2). <span class="highlight">KonsciousTrading will reset on October 22, 2025 at 12:00 AM.</span>
+                <div class="text-container">
+                    <div class="di-title">Restricted</div>
+                    <div class="di-message">Trading restricted due to losses (2). <span>KonsciousTrading</span> will reset on October 22, 2025 at 12:00 AM.</div>
                 </div>
             </div>
-
-            <div class="notification animate-slide-in" style="animation-delay: 0.2s">
-                <div class="notification-icon">
-                    <svg class="icon" viewBox="0 0 24 24" style="width: 16px; height: 16px">
-                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-                        <line x1="12" y1="9" x2="12" y2="13"/>
-                        <line x1="12" y1="17" x2="12.01" y2="17"/>
-                    </svg>
+        
+            <div class="notification-card animate-slide-in" style="animation-delay: 0.2s">
+                <div class="icon-container bg-warning">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" style="color: white"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" /></svg>
                 </div>
-                <div class="notification-text">
-                    <strong>Warning:</strong> Trade Blocked: Amount (1000) exceeds 2% risk limit (200).
+                <div class="text-container">
+                    <div class="di-title">Warning</div>
+                    <div class="di-message">Trade Blocked: Amount (1000) exceeds 2% risk limit (200).</div>
                 </div>
             </div>
-
-            <div class="notification success animate-slide-in" style="animation-delay: 0.3s">
-                <div class="notification-icon">
-                    <svg class="icon" viewBox="0 0 24 24" style="width: 16px; height: 16px">
-                        <polyline points="20 6 9 17 4 12"/>
-                    </svg>
+        
+            <div class="notification-card animate-slide-in" style="animation-delay: 0.3s">
+                <div class="icon-container bg-success">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" style="color: white"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                 </div>
-                <div class="notification-text">
-                    <strong>Success:</strong> Target profit reached! Trading is complete. <span class="highlight">KonsciousTrading will reset on October 22, 2025 at 12:00 AM.</span>
+                <div class="text-container">
+                    <div class="di-title">Success</div>
+                    <div class="di-message">Target profit reached! Trading is complete. <span>KonsciousTrading</span> will reset on October 22, 2025 at 12:00 AM.</div>
                 </div>
             </div>
+        
         </div>
     </section>
 
