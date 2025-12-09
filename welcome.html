@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KonsciousTrading Smart Notifications</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #F2F5F9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+        }
+
+        h1 {
+            font-weight: 800;
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: #111;
+        }
+
+        .divider {
+            width: 50px;
+            height: 4px;
+            background-color: #007AFF; /* info color from JS */
+            margin-bottom: 40px;
+            border-radius: 2px;
+        }
+
+        /* Styles adapted from injectNotificationStyles in content.js */
+        .notification-card {
+            background-color: #000; /* Strict match to #dynamic-island-notification bg */
+            border-radius: 50px; /* Strict match to #dynamic-island-notification radius */
+            padding: 12px 25px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 700px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            color: white;
+            box-sizing: border-box;
+        }
+
+        .icon-container {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-right: 16px;
+        }
+
+        .icon-container svg {
+            width: 24px;
+            height: 24px;
+            color: white;
+            display: block;
+        }
+
+        .text-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            text-align: left;
+        }
+
+        .di-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 2px;
+        }
+
+        .di-message {
+            font-size: 14px;
+            color: #8A8A8E; /* Strict match to content.js color */
+        }
+        
+        /* Highlight span as defined in JS strings */
+        .di-message span {
+            color: #007AFF; 
+        }
+
+        /* --- COLORS from notificationIcons object in content.js --- */
+        .bg-warning { background-color: #FF9500; }
+        .bg-block { background-color: #FF3B30; }
+        .bg-success { background-color: #34C759; }
+
+    </style>
+</head>
+<body>
+
+    <h1>Smart Notifications Keep You Protected</h1>
+    <div class="divider"></div>
+
+    <div class="notification-card">
+        <div class="icon-container bg-block">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256"><defs><linearGradient x1="9.812" y1="9.812" x2="38.361" y2="38.361" gradientUnits="userSpaceOnUse" id="color-1_hRIvjOSQ8I0i_gr1"><stop offset="0" stop-color="#ffffff"></stop><stop offset="0.443" stop-color="#ffffff"></stop><stop offset="1" stop-color="#fffdfd"></stop></linearGradient><linearGradient x1="6.675" y1="6.675" x2="40.934" y2="40.934" gradientUnits="userSpaceOnUse" id="color-2_hRIvjOSQ8I0i_gr2"><stop offset="0" stop-color="#ffffff"></stop><stop offset="0.443" stop-color="#ffffff"></stop><stop offset="1" stop-color="#fffdfd"></stop></linearGradient></defs><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.33333,5.33333)"><path d="M24,4c-11.045,0 -20,8.955 -20,20c0,11.045 8.955,20 20,20c11.045,0 20,-8.955 20,-20c0,-11.045 -8.955,-20 -20,-20zM24,38c-7.732,0 -14,-6.268 -14,-14c0,-7.732 6.268,-14 14,-14c7.732,0 14,6.268 14,14c0,7.732 -6.268,14 -14,14z" fill="url(#color-1_hRIvjOSQ8I0i_gr1)"></path><path d="M13.371,38.871l-4.242,-4.242l25.5,-25.5l4.242,4.242z" fill="url(#color-2_hRIvjOSQ8I0i_gr2)"></path></g></g></svg>
+        </div>
+        <div class="text-container">
+            <div class="di-title">Restricted</div>
+            <div class="di-message">Trading restricted due to Max trades (4). <span style="color: #007AFF;">KonsciousTrading</span> will reset on October 22, 2025 at 12:00 AM.</div>
+        </div>
+    </div>
+
+    <div class="notification-card">
+        <div class="icon-container bg-block">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256"><defs><linearGradient x1="9.812" y1="9.812" x2="38.361" y2="38.361" gradientUnits="userSpaceOnUse" id="color-1_hRIvjOSQ8I0i_gr1"><stop offset="0" stop-color="#ffffff"></stop><stop offset="0.443" stop-color="#ffffff"></stop><stop offset="1" stop-color="#fffdfd"></stop></linearGradient><linearGradient x1="6.675" y1="6.675" x2="40.934" y2="40.934" gradientUnits="userSpaceOnUse" id="color-2_hRIvjOSQ8I0i_gr2"><stop offset="0" stop-color="#ffffff"></stop><stop offset="0.443" stop-color="#ffffff"></stop><stop offset="1" stop-color="#fffdfd"></stop></linearGradient></defs><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.33333,5.33333)"><path d="M24,4c-11.045,0 -20,8.955 -20,20c0,11.045 8.955,20 20,20c11.045,0 20,-8.955 20,-20c0,-11.045 -8.955,-20 -20,-20zM24,38c-7.732,0 -14,-6.268 -14,-14c0,-7.732 6.268,-14 14,-14c7.732,0 14,6.268 14,14c0,7.732 -6.268,14 -14,14z" fill="url(#color-1_hRIvjOSQ8I0i_gr1)"></path><path d="M13.371,38.871l-4.242,-4.242l25.5,-25.5l4.242,4.242z" fill="url(#color-2_hRIvjOSQ8I0i_gr2)"></path></g></g></svg>
+        </div>
+        <div class="text-container">
+            <div class="di-title">Restricted</div>
+            <div class="di-message">Trading restricted due to losses (2). <span style="color: #007AFF;">KonsciousTrading</span> will reset on October 22, 2025 at 12:00 AM.</div>
+        </div>
+    </div>
+
+    <div class="notification-card">
+        <div class="icon-container bg-warning">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" /></svg>
+        </div>
+        <div class="text-container">
+            <div class="di-title">Warning</div>
+            <div class="di-message">Trade Blocked: Amount (1000) exceeds 2% risk limit (200).</div>
+        </div>
+    </div>
+
+    <div class="notification-card">
+        <div class="icon-container bg-success">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+        </div>
+        <div class="text-container">
+            <div class="di-title">Success</div>
+            <div class="di-message">Target profit reached! Trading is complete. <span style="color: #007AFF;">KonsciousTrading</span> will reset on October 22, 2025 at 12:00 AM.</div>
+        </div>
+    </div>
+
+</body>
+</html>
